@@ -12,4 +12,4 @@ c: client
 	bin/client
 
 s: server
-	bin/server
+	bin/server 8080
