@@ -2,11 +2,11 @@
 
 client:
 	mkdir -p bin
-	gcc client.c -o bin/client
+	gcc app/client.c -o bin/client
 
 server:
 	mkdir -p bin
-	gcc server.c -o bin/server
+	gcc app/server.c lib/linked_list.c -o bin/server
 
 c: client
 	bin/client
