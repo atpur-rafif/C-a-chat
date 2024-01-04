@@ -1,4 +1,5 @@
-#include "./list_generic.h"
+#include <stdlib.h>
+#include "./definition.h"
 
 LIST FUN(createNew)(){
     return NULL;
@@ -13,17 +14,17 @@ LIST_MEMBER* FUN(getIndexAt)(LIST list, int idx){
 }
 
 void FUN(insertAt)(LIST* list, int idx, TYPE value){
-	LIST_MEMBER *new = malloc(sizeof(LIST_MEMBER));
-	new->value = value;
-	new->next = NULL;
+	LIST_MEMBER *member = (LIST_MEMBER*) malloc(sizeof(LIST_MEMBER));
+	member->value = value;
+	member->next = NULL;
 
 	if(idx == 0){
-        new->next = *list;
-        *list = new;
+        member->next = *list;
+        *list = member;
     } else {
         LIST_MEMBER* at = FUN(getIndexAt)(*list, idx - 1);
-        new->next = at->next;
-        at->next = new;
+        member->next = at->next;
+        at->next = member;
     }
 }
 
