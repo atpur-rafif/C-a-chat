@@ -2,7 +2,7 @@
 
 client:
 	mkdir -p bin
-	gcc app/client.c -o bin/client
+	gcc app/client.c app/lib/list_generic.c -o bin/client
 
 server:
 	mkdir -p bin
